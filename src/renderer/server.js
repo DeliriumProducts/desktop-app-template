@@ -12,7 +12,10 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost';
 const ENV = process.env.NODE_ENV || 'development';
 
 const dev = ENV !== 'production';
-const app = next({ dev });
+const app = next({
+  dev,
+  dir: './renderer'
+});
 const handle = app.getRequestHandler();
 
 app

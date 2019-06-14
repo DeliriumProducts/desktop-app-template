@@ -1,12 +1,30 @@
 {
-  "name": "frontend-template",
+  "private": true,
+  "name": "desktop-app-template",
+  "description": "Template for desktop apps",
   "version": "1.0.0",
+  "author": "Delirium Products <office@deliriumproducts.me>",
+  "main": "app/background.js",
+  "build": {
+    "appId": "me.deliriumproducts.desktop-app-template",
+    "productName": "desktop-app-template",
+    "copyright": "Copyright © 2019 Delirium Products",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
-    "start": "next start"
+    "dev": "node nextron/nextron.js --custom-server renderer/server.js",
+    "build": "node nextron/nextron.js build",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "electron-serve": "^0.3.0",
+    "electron-store": "^3.3.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "@zeit/next-less": "^1.0.1",
@@ -24,13 +42,19 @@
     "nprogress": "^0.2.0",
     "null-loader": "2.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-firebaseui": "^3.1.2",
     "terser-webpack-plugin": "^1.3.0"
   },
-  "license": "MIT",
   "devDependencies": {
+    "arg": "^4.1.0",
+    "chalk": "^2.4.2",
+    "electron": "5.0.3",
+    "electron-builder": "20.43.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^8.0.1",
+    "node-npx": "^1.3.1",
+    "ora": "^3.4.0",
+    "webpack": "4.29.0",
+    "webpack-merge": "^4.2.1",
     "babel-eslint": "9.x",
     "eslint": "5.x",
     "eslint-config-react-app": "^4.0.1",

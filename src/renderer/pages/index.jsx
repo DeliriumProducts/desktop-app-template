@@ -64,7 +64,7 @@ export default () => (
       <Logo src="/static/dplogo.png" alt="dp-logo" />
       <Text>
         <StyledA href="https://deliriumproducts.me">Delirium Products!</StyledA>{' '}
-        frontend template.
+        desktop app template.
       </Text>
       <Paragraph>
         Edit <code>src/pages/index.jsx</code> and save to reload.
